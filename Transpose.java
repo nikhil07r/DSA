@@ -1,24 +1,24 @@
+import java.util.Scanner;
 public class Transpose {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    static void show(int[][] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++)
-                System.out.print(a[i][j] + " ");
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+
+        int[][] arr = new int[r][c];
+
+        for(int i = 0; i < r; i++)
+            for(int j = 0; j < c; j++)
+                arr[i][j] = sc.nextInt();
+
+        for(int i = 0; i < c; i++) {
+            for(int j = 0; j < r; j++) {
+                System.out.print(arr[j][i] + " ");
+            }
             System.out.println();
         }
-    }g
-    public static void main(String[] args) {
 
-        int[][] x = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] t = new int[3][3];
-
-        show(x);
-        System.out.println("Transpose:");
-
-        for (int i = 0; i < x.length; i++)
-            for (int j = 0; j < x.length; j++)
-                t[j][i] = x[i][j];
-
-        show(t);
+        sc.close();
     }
 }
